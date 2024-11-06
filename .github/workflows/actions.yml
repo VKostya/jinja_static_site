@@ -23,6 +23,11 @@ jobs:
       - name: Build
         run: mkdocs build
 
+      - name: Run j2lint
+        uses: ansible-actions/j2lint-action@v0.0.1
+        with:
+          target: "./statics"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
